@@ -15,6 +15,7 @@ class TaskCollection extends AbstractObjectCollection
 	public function __construct(Client $client, $array, $teamId)
 	{
 		parent::__construct($client, $array);
+		if (!is_array($this)) return;
 		foreach ($this as $task) {
 			$task->setTeamId($teamId);
 		}
